@@ -6,7 +6,7 @@
 
 🌐 **Language: [English](README.md) | [한국어](README_KO.md)**
 
-**ModueAgent** is a **Zero-Trust AI Agent Framework** built on the microkernel security principles of [ModueHarness](https://github.com/JeaMinLim/ModueHarness).
+**ModueAgent** is a **Zero-Trust AI Agent Framework** built on the microkernel security principles of [ModueHarness Microkernel Security Principles](docs/MODUEHARNESS_PRINCIPLES.md).
 
 While 1st-generation agent frameworks (LangChain, AutoGPT, CrewAI) rely on fragile prompt instructions ("*please do not execute dangerous commands*"), ModueAgent treats the LLM as an **untrusted entity that can be cognitively hijacked at any moment via Indirect Prompt Injection**. Security is structurally enforced via microkernel boundaries, ephemeral capabilities, output sandboxing, and resource budgets.
 
@@ -14,6 +14,7 @@ While 1st-generation agent frameworks (LangChain, AutoGPT, CrewAI) rely on fragi
 
 ## 📚 Documentation
 
+- 🏛️ **[ModueHarness Microkernel Principles](docs/MODUEHARNESS_PRINCIPLES.md)**: Foundational zero-trust philosophy, untrusted cognition axiom, and 5 microkernel security rules.
 - 🛠️ **[Developer Manual & Architecture Guide](docs/DEVELOPER_GUIDE.md)**: End-to-end guide on building secure agents, feature stacking workflow, mental models, and anti-patterns.
 - 📐 **[Security Architecture Specification](docs/ARCHITECTURE.md)**: Detailed threat model, OCap boundaries, and XOA sandboxing internals.
 - 🇰🇷 **[개발자 매뉴얼 (한국어)](docs/DEVELOPER_GUIDE_KO.md)**: 기능 빌드업 4계층 순서, 핵심 보안 설계 원칙 및 배포 체크리스트.
