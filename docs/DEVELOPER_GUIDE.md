@@ -1,6 +1,6 @@
 # ModueAgent Developer Guide & Architecture Manual
 
-Welcome to the **ModueAgent Developer Manual**. This guide provides an end-to-end walkthrough on how to build production-grade, secure-by-design AI agents using ModueAgent.
+Welcome to the **ModueAgent Developer Manual**. This guide provides an end-to-end walkthrough on how to build production-grade, secure-by-design AI agents using ModueAgent, built upon [ModueHarness Microkernel Security Principles](MODUEHARNESS_PRINCIPLES.md).
 
 🌐 **Language: [English](DEVELOPER_GUIDE.md) | [한국어](DEVELOPER_GUIDE_KO.md)**
 

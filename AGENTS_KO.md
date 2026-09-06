@@ -8,7 +8,7 @@
 
 ## 1. 프로젝트 철학 및 핵심 불변식
 
-ModueAgent는 [ModueHarness 마이크로커널 보안 원칙](docs/MODUEHARNESS_PRINCIPLES_KO.md)의 마이크로커널 보안 원칙에서 파생된 **Zero-Trust AI 에이전트 프레임워크**입니다.
+ModueAgent는 [ModueHarness 마이크로커널 보안 설계 원칙](docs/MODUEHARNESS_PRINCIPLES_KO.md)에서 파생된 **Zero-Trust AI 에이전트 프레임워크**입니다.
 
 ### 근본적 불변식
 > **"LLM은 본질적으로 신뢰할 수 없다."**  

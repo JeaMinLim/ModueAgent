@@ -6,7 +6,7 @@
 
 🌐 **Language: [English](README.md) | [한국어](README_KO.md)**
 
-**ModueAgent**는 [ModueHarness 마이크로커널 보안 설계 원칙](docs/MODUEHARNESS_PRINCIPLES_KO.md)의 마이크로커널 보안 설계 원칙(Zero-Trust, 객체 역량, JIT 최소 권한, XOA 데이터 격리, 자원 예산 제어)을 개발자가 손쉽게 사용할 수 있도록 추상화한 **보안 내재화(Secure-by-Design) AI 에이전트 프레임워크**입니다.
+**ModueAgent**는 [ModueHarness 마이크로커널 보안 설계 원칙](docs/MODUEHARNESS_PRINCIPLES_KO.md)(Zero-Trust, 객체 역량, JIT 최소 권한, XOA 데이터 격리, 자원 예산 제어)을 개발자가 손쉽게 사용할 수 있도록 추상화한 **보안 내재화(Secure-by-Design) AI 에이전트 프레임워크**입니다.
 
 기존 1세대 에이전트 프레임워크(LangChain, AutoGPT, CrewAI 등)가 "위험한 명령을 실행하지 마세요"와 같은 취약한 프롬프트 지침에 의존한 것과 달리, ModueAgent는 **"LLM은 언제든 간접 프롬프트 주입(Indirect Prompt Injection)을 통해 인지 납치될 수 있다"**는 전제 하에 커널 메커니즘으로 에이전트의 폭발 반경(Blast Radius)을 원천 통제합니다.
 

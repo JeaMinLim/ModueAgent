@@ -6,7 +6,7 @@
 
 🌐 **Language: [English](README.md) | [한국어](README_KO.md)**
 
-**ModueAgent** is a **Zero-Trust AI Agent Framework** built on the microkernel security principles of [ModueHarness Microkernel Security Principles](docs/MODUEHARNESS_PRINCIPLES.md).
+**ModueAgent** is a **Zero-Trust AI Agent Framework** derived from [ModueHarness Microkernel Security Principles](docs/MODUEHARNESS_PRINCIPLES.md).
 
 While 1st-generation agent frameworks (LangChain, AutoGPT, CrewAI) rely on fragile prompt instructions ("*please do not execute dangerous commands*"), ModueAgent treats the LLM as an **untrusted entity that can be cognitively hijacked at any moment via Indirect Prompt Injection**. Security is structurally enforced via microkernel boundaries, ephemeral capabilities, output sandboxing, and resource budgets.
 

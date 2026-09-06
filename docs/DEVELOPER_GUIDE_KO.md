@@ -1,6 +1,6 @@
 # ModueAgent 개발자 가이드 & 아키텍처 매뉴얼
 
-**ModueAgent 개발자 매뉴얼**에 오신 것을 환영합니다. 이 문서는 ModueAgent 프레임워크를 사용하여 안전하고 견고한 프로덕션급 AI 에이전트를 구축할 때 **기능을 어떤 순서로 쌓아 올려야 하는지**, 그리고 **반드시 지켜야 하는 핵심 설계 원칙**이 무엇인지 안내합니다.
+**ModueAgent 개발자 매뉴얼**에 오신 것을 환영합니다. 이 문서는 [ModueHarness 마이크로커널 보안 설계 원칙](MODUEHARNESS_PRINCIPLES_KO.md)을 바탕으로 ModueAgent 프레임워크를 사용하여 안전하고 견고한 프로덕션급 AI 에이전트를 구축할 때 **기능을 어떤 순서로 쌓아 올려야 하는지**, 그리고 **반드시 지켜야 하는 핵심 설계 원칙**이 무엇인지 안내합니다.
 
 🌐 **Language: [English](DEVELOPER_GUIDE.md) | [한국어](DEVELOPER_GUIDE_KO.md)**
 

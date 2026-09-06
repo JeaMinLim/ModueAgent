@@ -8,7 +8,7 @@ All AI assistants (including Claude Code, Cursor, GitHub Copilot, Google Gemini,
 
 ## 1. Project Philosophy & Core Invariants
 
-ModueAgent is a **Zero-Trust AI Agent Framework** derived from the microkernel security principles of [ModueHarness Microkernel Security Principles](docs/MODUEHARNESS_PRINCIPLES.md).
+ModueAgent is a **Zero-Trust AI Agent Framework** derived from [ModueHarness Microkernel Security Principles](docs/MODUEHARNESS_PRINCIPLES.md).
 
 ### Fundamental Invariant
 > **"LLMs are inherently untrusted."**  
