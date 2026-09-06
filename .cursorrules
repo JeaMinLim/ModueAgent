@@ -1,0 +1,9 @@
+# Cursor Rules — ModueAgent
+
+Refer to and follow all rules and guidelines specified in AGENTS.md.
+
+Key Directives:
+1. Zero-Trust security invariants must be preserved. Never bypass CapabilityToken or EffectClass checks.
+2. English is the primary language for code, docstrings, and comments.
+3. No external dependencies in the core framework (standard library only).
+4. Run tests: `PYTHONPATH=src python3 -m unittest discover -s tests -p "test_*.py" -v`

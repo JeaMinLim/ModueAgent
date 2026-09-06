@@ -1,0 +1,12 @@
+---
+description: ModueAgent Project Guidelines and Zero-Trust Security Rules
+globs: **/*.py, **/*.md, **/*.toml
+alwaysApply: true
+---
+
+All development within this repository must adhere to the master standards defined in `AGENTS.md`.
+
+- Enforce Zero-Trust capability validation on every tool call.
+- Do not add third-party dependencies to `src/modueagent/`.
+- Never use `eval()` or `exec()` — use `safe_eval_arithmetic()`.
+- Always discard raw tool outputs after extracting whitelisted fields via `extract_safe()`.

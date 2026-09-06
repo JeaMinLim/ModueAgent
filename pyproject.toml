@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "modueagent"
+version = "0.1.0"
+description = "A Zero-Trust AI agent framework built on microkernel security principles and capability-based access control."
+readme = "README.md"
+authors = [
+    { name = "Jea Min Lim", email = "gam1532@gmail.com" }
+]
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+keywords = [
+    "ai-agent",
+    "agent-framework",
+    "zero-trust",
+    "capability-based-security",
+    "llm-security",
+    "prompt-injection-defense",
+    "microkernel"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Security",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/JeaMinLim/ModueAgent"
+Repository = "https://github.com/JeaMinLim/ModueAgent"
+Issues = "https://github.com/JeaMinLim/ModueAgent/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
