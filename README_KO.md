@@ -14,8 +14,10 @@
 
 ## 📚 문서 안내 (Documentation)
 
-- 🛠️ **[개발자 매뉴얼 & 아키텍처 가이드 (한국어)](docs/DEVELOPER_GUIDE_KO.md)**: 기능 빌드업 4계층 순서, 멘탈 모델, 부작용 등급 분류법, 안티 패턴 및 배포 체크리스트.
+- 🛠️ **[개발자 매뉴얼 & 가이드 (한국어)](docs/DEVELOPER_GUIDE_KO.md)**: 기능 빌드업 4계층 순서, 멘탈 모델, 부작용 등급 분류법, 안티 패턴 및 배포 체크리스트.
+- 📐 **[보안 아키텍처 명세서 (한국어)](docs/ARCHITECTURE_KO.md)**: 위협 모델, 객체 역량 경계 및 XOA 출력 격리 상세.
 - 🌐 **[Developer Manual (English)](docs/DEVELOPER_GUIDE.md)**: End-to-end architecture manual and secure agent design guide.
+- 🌐 **[Architecture Specification (English)](docs/ARCHITECTURE.md)**: Threat model and security internals.
 
 ---
 

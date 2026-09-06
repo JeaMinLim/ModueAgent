@@ -15,7 +15,9 @@ While 1st-generation agent frameworks (LangChain, AutoGPT, CrewAI) rely on fragi
 ## 📚 Documentation
 
 - 🛠️ **[Developer Manual & Architecture Guide](docs/DEVELOPER_GUIDE.md)**: End-to-end guide on building secure agents, feature stacking workflow, mental models, and anti-patterns.
+- 📐 **[Security Architecture Specification](docs/ARCHITECTURE.md)**: Detailed threat model, OCap boundaries, and XOA sandboxing internals.
 - 🇰🇷 **[개발자 매뉴얼 (한국어)](docs/DEVELOPER_GUIDE_KO.md)**: 기능 빌드업 4계층 순서, 핵심 보안 설계 원칙 및 배포 체크리스트.
+- 🇰🇷 **[보안 아키텍처 명세서 (한국어)](docs/ARCHITECTURE_KO.md)**: 위협 모델, 객체 역량 경계 및 XOA 출력 격리 상세.
 
 ---
 
