@@ -12,6 +12,13 @@
 
 ---
 
+## 📚 문서 안내 (Documentation)
+
+- 🛠️ **[개발자 매뉴얼 & 아키텍처 가이드 (한국어)](docs/DEVELOPER_GUIDE_KO.md)**: 기능 빌드업 4계층 순서, 멘탈 모델, 부작용 등급 분류법, 안티 패턴 및 배포 체크리스트.
+- 🌐 **[Developer Manual (English)](docs/DEVELOPER_GUIDE.md)**: End-to-end architecture manual and secure agent design guide.
+
+---
+
 ## 🛡️ 왜 ModueAgent인가? — 해결하는 보안 위협
 
 에이전트가 외부 도구(웹 검색, 파일 시스템, API, 데이터베이스)를 직접 호출하게 되면서 다음과 같은 치명적 공격이 급증하고 있습니다:

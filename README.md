@@ -12,6 +12,13 @@ While 1st-generation agent frameworks (LangChain, AutoGPT, CrewAI) rely on fragi
 
 ---
 
+## 📚 Documentation
+
+- 🛠️ **[Developer Manual & Architecture Guide](docs/DEVELOPER_GUIDE.md)**: End-to-end guide on building secure agents, feature stacking workflow, mental models, and anti-patterns.
+- 🇰🇷 **[개발자 매뉴얼 (한국어)](docs/DEVELOPER_GUIDE_KO.md)**: 기능 빌드업 4계층 순서, 핵심 보안 설계 원칙 및 배포 체크리스트.
+
+---
+
 ## 🛡️ Why ModueAgent?
 
 AI agents executing real-world actions (web fetch, file system, API, shell) face severe attack vectors:
