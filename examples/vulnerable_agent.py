@@ -16,5 +16,6 @@ agent = SecureAgent(
     name="RiskyAgent",
     tools=[delete_all_files],
     allowed_tools=["delete_all_files"],
-    budget=None,  # Vulnerability: Missing budget!
+    # Note: Passing budget=None causes SecureAgent to apply a safe fail-safe default (Budget(10, 100000)).
+    # SEC-BUDGET-MISSING does not trigger through this path due to the fail-safe default.
 )

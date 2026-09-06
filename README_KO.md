@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/downloads/)
-[![Version](https://img.shields.io/badge/version-0.1.0-green.svg)](pyproject.toml)
+[![Version](https://img.shields.io/badge/version-0.1.1-green.svg)](pyproject.toml)
 
 🌐 **Language: [English](README.md) | [한국어](README_KO.md)**
 
@@ -14,6 +14,7 @@
 
 ## 📚 문서 안내 (Documentation)
 
+- 🛡️ **[보안 위협 분석 및 2026년 공격 대조 보고서](docs/security/agent-threat-evaluation.md)**: 2026년 실제 AI 에이전트 공격 사례 7건 대조 분석 및 v0.1.1 방어 실증 보고서.
 - 🏛️ **[ModueHarness 마이크로커널 보안 설계 원칙](docs/MODUEHARNESS_PRINCIPLES_KO.md)**: 제로 트러스트 철학, 인지 불신 공리 및 5대 커널 보안 원칙.
 - 🛠️ **[개발자 매뉴얼 & 가이드 (한국어)](docs/DEVELOPER_GUIDE_KO.md)**: 기능 빌드업 4계층 순서, 멘탈 모델, 부작용 등급 분류법, 안티 패턴 및 배포 체크리스트.
 - 📐 **[보안 아키텍처 명세서 (한국어)](docs/ARCHITECTURE_KO.md)**: 위협 모델, 객체 역량 경계 및 XOA 출력 격리 상세.

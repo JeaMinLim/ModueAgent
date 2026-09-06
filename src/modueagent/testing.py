@@ -20,7 +20,10 @@ DESTRUCTIVE_KEYWORDS = {
     "erase", "format", "truncate", "transfer", "refund", "wipe", "cancel",
 }
 
-DANGEROUS_CALLS = {"eval", "exec", "os.system", "popen", "subprocess.call", "subprocess.Popen"}
+_DANGEROUS_MODULE_CALLS: Dict[str, set] = {
+    "os": {"system", "popen"},
+    "subprocess": {"Popen", "call", "run", "check_call", "check_output"},
+}
 
 
 class Severity(Enum):
@@ -146,12 +149,19 @@ class AgentSecurityAuditor:
                             message=f"Tool uses forbidden dynamic execution '{node.func.id}()'. Vulnerable to RCE.",
                             target=tool_name,
                         ))
-                    # Check for os.system
-                    elif isinstance(node.func, ast.Attribute) and node.func.attr in ("system", "popen"):
+                    # Check for dangerous os / subprocess execution
+                    elif (
+                        isinstance(node.func, ast.Attribute)
+                        and isinstance(node.func.value, ast.Name)
+                        and node.func.attr in _DANGEROUS_MODULE_CALLS.get(node.func.value.id, set())
+                    ):
                         report.findings.append(AuditFinding(
                             severity=Severity.CRITICAL,
                             rule="SEC-AST-DANGEROUS-SHELL",
-                            message=f"Tool invokes shell execution method '{node.func.attr}()'. Vulnerable to Command Injection.",
+                            message=(
+                                f"Tool invokes shell/process execution "
+                                f"'{node.func.value.id}.{node.func.attr}()'. Vulnerable to Command/OS Injection."
+                            ),
                             target=tool_name,
                         ))
         except (OSError, TypeError):

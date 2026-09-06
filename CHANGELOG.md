@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-09-06
+
+### Fixed
+- **AST Security Scanner Subprocess Detection (`modueagent.testing`)**:
+  - Replaced unreferenced `DANGEROUS_CALLS` with `_DANGEROUS_MODULE_CALLS` dictionary matching exact module-attribute pairs for `os` and `subprocess`.
+  - Now deterministically catches `subprocess.Popen`, `subprocess.call`, `subprocess.run`, `subprocess.check_call`, and `subprocess.check_output`, closing the MS `calc.exe` style RCE bypass.
+- **Fail-Closed Default for `@tool` Decorator (`modueagent.tool`)**:
+  - Changed `@tool()` parameter default `effect_class` from `EffectClass.READ` to `EffectClass.DESTRUCTIVE`.
+  - Unclassified tools now strictly inherit fail-closed 60s TTL and mandatory verification traps, matching `ToolManifest`.
+- **Example Documentation Alignment (`examples/vulnerable_agent.py`)**:
+  - Clarified that `SecureAgent` automatically injects a fail-safe default budget when `budget=None` is passed.
+
+### Added
+- **Security Attack Evaluation Reports (`docs/security/`)**:
+  - Benchmarked 7 real-world 2026 AI agent attack cases in English (`agent-threat-evaluation-en.md`) and Korean (`agent-threat-evaluation.md`).
+- **New Unit Tests**:
+  - Added PoC unit test for `subprocess.Popen` RCE detection and default `DESTRUCTIVE` effect class verification (total 28 tests).
+
 ## [0.1.0] - 2026-09-06
 
 ### Added
@@ -33,6 +51,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Integrated bridges for Claude Code (`CLAUDE.md`), Cursor (`.cursorrules`, `.cursor/rules/modueagent.mdc`), GitHub Copilot (`.github/copilot-instructions.md`), and Google Gemini & Antigravity (`GEMINI.md`).
   - Assistant verification script (`scripts/bootstrap_tools.py`).
 - **Testing & Documentation**:
-  - 21 unit tests covering capability lifecycles, schema validation, RCE prevention, prompt injection blocking, and budget exhaustion.
+  - 25 unit tests covering capability lifecycles, schema validation, RCE prevention, prompt injection blocking, and budget exhaustion.
   - Primary English documentation (`README.md`) and secondary Korean documentation (`README_KO.md`).
   - Interactive quickstart demonstration (`examples/quickstart.py`).

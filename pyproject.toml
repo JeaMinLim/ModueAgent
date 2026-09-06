@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "modueagent"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Zero-Trust AI agent framework built on microkernel security principles and capability-based access control."
 readme = "README.md"
 authors = [

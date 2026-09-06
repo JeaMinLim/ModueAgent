@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/downloads/)
-[![Version](https://img.shields.io/badge/version-0.1.0-green.svg)](pyproject.toml)
+[![Version](https://img.shields.io/badge/version-0.1.1-green.svg)](pyproject.toml)
 
 🌐 **Language: [English](README.md) | [한국어](README_KO.md)**
 
@@ -14,6 +14,7 @@ While 1st-generation agent frameworks (LangChain, AutoGPT, CrewAI) rely on fragi
 
 ## 📚 Documentation
 
+- 🛡️ **[Threat Model & 2026 Attack Evaluation](docs/security/agent-threat-evaluation-en.md)**: Benchmarking 7 real-world 2026 AI agent attack vectors and v0.1.1 defense verification.
 - 🏛️ **[ModueHarness Microkernel Principles](docs/MODUEHARNESS_PRINCIPLES.md)**: Foundational zero-trust philosophy, untrusted cognition axiom, and 5 microkernel security rules.
 - 🛠️ **[Developer Manual & Architecture Guide](docs/DEVELOPER_GUIDE.md)**: End-to-end guide on building secure agents, feature stacking workflow, mental models, and anti-patterns.
 - 📐 **[Security Architecture Specification](docs/ARCHITECTURE.md)**: Detailed threat model, OCap boundaries, and XOA sandboxing internals.

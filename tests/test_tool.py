@@ -101,6 +101,14 @@ class TestTool(unittest.TestCase):
                 capability_engine=self.engine,
             )
 
+    def test_tool_decorator_defaults_to_destructive(self) -> None:
+        # [v0.1.1] Verification that omitting effect_class defaults to fail-closed DESTRUCTIVE
+        @tool(name="unclassified_action", extract_paths={"res": "res"})
+        def unclassified_action() -> dict:
+            return {"res": True}
+
+        self.assertEqual(unclassified_action.manifest.effect_class, EffectClass.DESTRUCTIVE)
+
 
 if __name__ == "__main__":
     unittest.main()

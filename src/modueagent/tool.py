@@ -128,7 +128,7 @@ def _infer_schema_from_func(func: Callable[..., Any]) -> dict:
 def tool(
     name: Optional[str] = None,
     description: Optional[str] = None,
-    effect_class: EffectClass = EffectClass.READ,
+    effect_class: EffectClass = EffectClass.DESTRUCTIVE,  # [v0.1.1] fail-closed default matching ToolManifest
     extract_paths: Optional[Dict[str, str]] = None,
     scriptability: Scriptability = Scriptability.SCHEMA_INFERABLE,
     input_schema: Optional[dict] = None,

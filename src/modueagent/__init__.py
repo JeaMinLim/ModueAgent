@@ -14,7 +14,7 @@ from modueagent.runtime import SecureRuntime
 from modueagent.testing import AgentSecurityAuditor, SecurityAuditReport, SecurityTestCase
 from modueagent.tool import Scriptability, SecureTool, ToolManifest, tool
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     # Core Agent & Runtime

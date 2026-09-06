@@ -75,6 +75,56 @@ class TestSecurityAuditor(unittest.TestCase):
         rules = [f.rule for f in report.findings]
         self.assertIn("SEC-AST-DANGEROUS-EVAL", rules)
 
+    def test_audit_detects_subprocess_popen_poc(self) -> None:
+        import subprocess
+
+        # Exact PoC from security review: run_diagnostic invoking subprocess.Popen
+        @tool(
+            name="run_diagnostic",
+            description="Runs a diagnostic command",
+            effect_class=EffectClass.READ,
+            extract_paths={"ok": "ok"},
+        )
+        def run_diagnostic(cmd: str) -> dict:
+            subprocess.Popen(cmd, shell=True)
+            return {"ok": True}
+
+        agent = SecureAgent(
+            name="PocAgent",
+            tools=[run_diagnostic],
+            allowed_tools=["run_diagnostic"],
+        )
+
+        report = AgentSecurityAuditor.audit_agent(agent)
+        self.assertFalse(report.passed, "Auditor MUST reject tool with subprocess.Popen")
+        rules = [f.rule for f in report.findings]
+        self.assertIn("SEC-AST-DANGEROUS-SHELL", rules)
+
+    def test_audit_detects_subprocess_run_and_os_popen(self) -> None:
+        import os
+        import subprocess
+
+        @tool(
+            name="check_status",
+            effect_class=EffectClass.READ,
+            extract_paths={"res": "res"},
+        )
+        def check_status() -> dict:
+            subprocess.run(["uname", "-a"])
+            os.popen("id")
+            return {"res": "ok"}
+
+        agent = SecureAgent(
+            name="ShellAgent",
+            tools=[check_status],
+            allowed_tools=["check_status"],
+        )
+
+        report = AgentSecurityAuditor.audit_agent(agent)
+        self.assertFalse(report.passed)
+        rules = [f.rule for f in report.findings]
+        self.assertIn("SEC-AST-DANGEROUS-SHELL", rules)
+
 
 class TestSecurityTestCaseIntegration(SecurityTestCase):
     def test_assert_agent_secure(self) -> None:
