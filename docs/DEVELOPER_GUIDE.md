@@ -210,7 +210,38 @@ runtime = SecureRuntime(agent=agent, verification_callback=security_trap)
 
 ---
 
-## 4. Anti-Patterns & Security Checklist
+## 4. Automated Security Verification & CI/CD Testing
+
+ModueAgent provides an **automated zero-trust security auditor** (`AgentSecurityAuditor`) and testing utilities (`SecurityTestCase`) so that developers and CI/CD pipelines can rigorously verify compliance before deploying an agent to production.
+
+### 4.1 Single-Line Unit Testing with `SecurityTestCase`
+Developers can inherit from `SecurityTestCase` in their test suites to verify an agent in a single assertion:
+
+```python
+from modueagent.testing import SecurityTestCase
+from my_project.agent import support_agent
+
+class TestAgentCompliance(SecurityTestCase):
+    def test_support_agent_security(self):
+        # Automatically audits:
+        # 1. EffectClass misclassifications (e.g. destructive actions labeled READ)
+        # 2. XOA extract_paths compliance
+        # 3. Denial-of-Wallet budget constraints
+        # 4. AST code inspection for eval(), exec(), and os.system()
+        # 5. Red-team adversarial prompt injection simulation
+        self.assertAgentSecure(support_agent)
+```
+
+### 4.2 CLI Security Auditing (`scripts/audit_agent.py`)
+Audit any agent file directly from the terminal or CI pipeline:
+
+```bash
+python3 scripts/audit_agent.py path/to/my_agent.py
+```
+
+---
+
+## 5. Anti-Patterns & Security Checklist
 
 ### ❌ Anti-Patterns to Avoid
 

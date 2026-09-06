@@ -206,7 +206,53 @@ runtime = SecureRuntime(agent=agent, verification_callback=store_security_trap)
 
 ---
 
-## 4. 안티 패턴 및 배포 체크리스트
+## 4. 자동화된 보안 검증 & CI/CD 테스트
+
+ModueAgent는 개발자와 CI/CD 파이프라인이 에이전트를 프로덕션에 배포하기 전에 제로 트러스트 보안 원칙을 완벽히 지켰는지 자동으로 검증할 수 있는 **보안 감사 도구**(`AgentSecurityAuditor`) 및 테스트 프레임워크(`SecurityTestCase`)를 제공합니다.
+
+### 4.1 단 한 줄로 끝내는 유닛테스트 (`SecurityTestCase`)
+테스트 스위트에서 `SecurityTestCase`를 상속받으면 단 한 줄의 assertion으로 에이전트의 보안성을 전수 검사합니다:
+
+```python
+from modueagent.testing import SecurityTestCase
+from my_project.agent import support_agent
+
+class TestAgentCompliance(SecurityTestCase):
+    def test_support_agent_security(self):
+        # 자동으로 다음 항목들을 전수 감사:
+        # 1. EffectClass 오분류 탐지 (예: delete/drop이 포함되었는데 READ로 지정한 결함)
+        # 2. XOA extract_paths 누락 여부
+        # 3. 과금 테러 방지 Budget 설정 여부
+        # 4. AST 정적 분석: eval(), exec(), os.system() 위험 호출 사용 여부
+        # 5. 비인가 도구 호출 시뮬레이션(레드팀 인젝션 내성)
+        self.assertAgentSecure(support_agent)
+```
+
+### 4.2 터미널 CLI 보안 감사 도구 (`scripts/audit_agent.py`)
+CI/CD 파이프라인이나 터미널에서 에이전트 파일을 지정하여 즉시 검사할 수 있습니다:
+
+```bash
+python3 scripts/audit_agent.py path/to/my_agent.py
+```
+
+출력 예시:
+```text
+=== Security Audit Report for 'CustomerSupportAgent' ===
+Status: PASSED ✅
+Total Findings: 0
+```
+
+만약 파괴적 작업이 잘못 지정되었거나 `eval()`이 포함되어 있다면:
+```text
+=== Security Audit Report for 'RiskyAgent' ===
+Status: FAILED ❌
+Total Findings: 1
+  [CRITICAL] (SEC-EFFECT-MISCLASSIFIED) delete_user: Tool name contains destructive keyword(s) ['delete'] but effect_class is 'read'. This bypasses 60s TTL and verification traps!
+```
+
+---
+
+## 5. 안티 패턴 및 배포 체크리스트
 
 ### ❌ 피해야 할 안티 패턴
 

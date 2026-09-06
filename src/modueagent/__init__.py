@@ -11,6 +11,7 @@ from modueagent.capability import (
 from modueagent.context import AgentContext, Budget, ConversationMessage, MessageRole
 from modueagent.guardrails import extract_safe, mask_error, safe_eval_arithmetic, validate_tool_arguments
 from modueagent.runtime import SecureRuntime
+from modueagent.testing import AgentSecurityAuditor, SecurityAuditReport, SecurityTestCase
 from modueagent.tool import Scriptability, SecureTool, ToolManifest, tool
 
 __version__ = "0.1.0"
@@ -42,4 +43,8 @@ __all__ = [
     "safe_eval_arithmetic",
     "validate_tool_arguments",
     "mask_error",
+    # Automated Security Verification & Testing
+    "AgentSecurityAuditor",
+    "SecurityAuditReport",
+    "SecurityTestCase",
 ]
